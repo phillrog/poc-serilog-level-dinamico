@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Serilog - Level dinâmico";
+}
+
+<div class="text-center">
+    <h1>Level atual: <strong>@Model.LevelAtual </strong> </h1>
+    <form method="post">
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" name="verbose" asp-route-level="Verbose" class="btn btn-secondary">Verbose</button>
+                <button type="submit" name="debug" asp-route-level="Debug" class="btn btn-secondary">Debug</button>
+                <button type="submit" name="information" asp-route-level="Information" class="btn btn-secondary">Information</button>
+                <button type="submit" name="warning" asp-route-level="Warning" class="btn btn-warning">Warning</button>
+                <button type="submit" name="error" asp-route-level="Error" class="btn btn-danger">Error</button>
+                <button type="submit" name="fatal" asp-route-level="Fatal" class="btn btn-danger">Fatal</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page-handler="LimparConsole" class="btn btn-warning">Limpar Console</a>
+        </div>
+        <div class="col-6">
+            <a asp-page-handler="NovoLog" class="btn btn-dark">Novo Log</a>
+        </div>
+    </div>
+</div>
